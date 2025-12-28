@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
-import Sidebar from "./Sidebar";
+// import Sidebar from "./Sidebar";
 
 type TDashLayout = {
   children: React.ReactNode;
@@ -45,7 +45,7 @@ const DashLayout = ({ children }: TDashLayout) => {
   return (
     <div className="h-screen w-full bg-[#FAFAFA] p-2 md:p-4 flex flex-col lg:flex-row lg:space-x-2.5">
       {/* LEFT Sidebar Container */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* RIGHT Container */}
       <div className="w-full h-full flex flex-col lg:space-y-5 overflow-hidden">
