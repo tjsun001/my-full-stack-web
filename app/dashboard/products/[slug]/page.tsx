@@ -1,6 +1,8 @@
 import api from "@/lib/axios";
 import { TProduct } from "@/types";
 
+import ProductDetails from "../../_components/ProductDetails";
+
 type ParamsProps = {
   params: Promise<{ slug: string }>;
 };
@@ -16,7 +18,7 @@ export default async function Page({ params }: ParamsProps) {
     );
 
     // Render the product details (example: JSON)
-    return <pre>{JSON.stringify(data, null, 2)}</pre>;
+    return <ProductDetails product={data} />;
   } catch (error: any) {
     const statusCode = error?.response?.status;
 
