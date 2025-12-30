@@ -14,8 +14,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 // import DarkModeToggle from "@/components/DarkModeToggle";
-// import { DashboardTabs } from "@/data/dashboard";
+import { DashboardTabs } from "@/data/dashboard";
+// import { DashboardTabs } from "../../../src/data/dashboard";
 import ProductLogo from "@/icons/logos/ProductLogo";
+
+``;
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -173,22 +176,22 @@ const Sidebar = () => {
                 </button>
               </div>
               <div className="space-y-2 flex flex-col">
-                {/* {DashboardTabs.map((tab, index) => (
-                                    <div key={index}>
-                                        <button
-                                            onClick={() => handleMenuClick(tab)}
-                                            className={twMerge(
-                                                "flex items-center space-x-2 px-3 py-2 md:py-2.5 rounded-full duration-200 w-full text-left",
-                                                pathname === tab.link
-                                                    ? "bg-white dark:bg-gray-700 text-black dark:text-white"
-                                                    : "text-[#9B9B9B] dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-white",
-                                            )}
-                                        >
-                                            {tab.icon}
-                                            <p>{tab.label}</p>
-                                        </button>
-                                    </div>
-                                ))} */}
+                {DashboardTabs.map((tab, index) => (
+                  <div key={index}>
+                    <button
+                      onClick={() => handleMenuClick(tab)}
+                      className={twMerge(
+                        "flex items-center space-x-2 px-3 py-2 md:py-2.5 rounded-full duration-200 w-full text-left",
+                        pathname === tab.link
+                          ? "bg-white dark:bg-gray-700 text-black dark:text-white"
+                          : "text-[#9B9B9B] dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-white",
+                      )}
+                    >
+                      <tab.icon className="w-5 h-5" />
+                      <p>{tab.label}</p>
+                    </button>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -201,22 +204,23 @@ const Sidebar = () => {
 
       {/* Dashboard TABs on Desktop */}
       <div className="lg:space-y-2 hidden lg:flex flex-col">
-        {/* {DashboardTabs.map((tab, index) => (
-                    <div key={index}>
-                        <button
-                            onClick={() => handleMenuClick(tab)}
-                            className={twMerge(
-                                "flex items-center space-x-2 px-3 py-2 md:py-2.5 rounded-full duration-200 w-full text-left",
-                                pathname === tab.link
-                                    ? "bg-white dark:bg-gray-700 text-black dark:text-white"
-                                    : "text-[#9B9B9B] dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-white",
-                            )}
-                        >
-                            {tab.icon}
-                            <p>{tab.label}</p>
-                        </button>
-                    </div>
-                ))} */}
+        {DashboardTabs.map((tab, index) => (
+          <div key={index}>
+            <button
+              onClick={() => handleMenuClick(tab)}
+              className={twMerge(
+                "flex items-center space-x-2 px-3 py-2 md:py-2.5 rounded-full duration-200 w-full text-left",
+                pathname === tab.link
+                  ? "bg-white dark:bg-gray-700 text-black dark:text-white"
+                  : "text-[#9B9B9B] dark:text-gray-400 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-white",
+              )}
+            >
+              <tab.icon className="w-5 h-5" />
+
+              <p>{tab.label}</p>
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
