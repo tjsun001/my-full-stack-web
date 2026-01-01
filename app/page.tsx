@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Orb from "@/components/Orb";
+import RecommendationsButton from "@/components/RecommendationsButton";
 import Logo from "@/icons/logos/logo";
 
 export const metadata: Metadata = {
@@ -29,4 +30,12 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default function HomePage() {
+  return (
+    <main style={{ padding: 24 }}>
+      <h1>Home</h1>
+      <RecommendationsButton />
+    </main>
+  );
+}
+// export default Home;
