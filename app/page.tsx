@@ -1,4 +1,14 @@
 import type { Metadata } from "next";
+// export default function HomePage() {
+//   return (
+//     <main style={{ padding: 24 }}>
+//       <h1>Home</h1>
+//       <RecommendationsButton />
+//     </main>
+//   );
+// }
+// export default Home;
+import { redirect } from "next/navigation";
 
 import Orb from "@/components/Orb";
 import RecommendationsButton from "@/components/RecommendationsButton";
@@ -24,18 +34,12 @@ const Home = () => {
         </Orb>
       </div>
       <p className="text-lg md:text-2xl font-semibold">
-        Amigoscode Starter Template
+        Thurmans Starter Template
       </p>
     </main>
   );
 };
 
 export default function HomePage() {
-  return (
-    <main style={{ padding: 24 }}>
-      <h1>Home</h1>
-      <RecommendationsButton />
-    </main>
-  );
+  redirect("/dashboard");
 }
-// export default Home;
